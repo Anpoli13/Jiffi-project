@@ -41,6 +41,7 @@ class App extends Component {
     this.setState({
       loading: true
     })
+
     try {
       // we use await to wait for our response to come back
       const response = await fetch(
@@ -56,7 +57,7 @@ class App extends Component {
 
       const randomGif = randomChoice(data)
 
-      console.log(randomGif)
+      // console.log(randomGif)
 
       this.setState((prevState, props) => ({
         ...prevState,
@@ -68,6 +69,7 @@ class App extends Component {
         loading: false,
         hintText: `Hit enter to see more ${searchTerm}`
       }))
+
     } catch (error) {
       this.setState((prevState, props) => ({
         ...prevState,
